@@ -1,10 +1,11 @@
 import React from 'react';
 import './styles.css';
+import { Link } from 'react-router-dom';
 
 export default () => {
   return (
     <header className="toolbar">
-      Calculator
+      <Link to="/"> Calculator </Link>
     </header>
   )
 }

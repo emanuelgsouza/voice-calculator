@@ -6,3 +6,8 @@
     font-weight: 600;
     font-size: 1.2rem;
 }
+
+.toolbar a {
+    color: white;
+    text-decoration: none;
+}

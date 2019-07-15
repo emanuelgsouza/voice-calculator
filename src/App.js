@@ -4,13 +4,17 @@ import './assets/reset.css';
 import './assets/general.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import MainPage from './pages/main';
+import NormalPage from './pages/normal';
+import VoicePage from './pages/voice';
 
 function App() {
   return (
     <div className="App">
+    <Router>
       <Toolbar />
-      <Router>
         <Route path="/" exact component={MainPage}></Route>
+        <Route path="/normal" component={NormalPage}></Route>
+        <Route path="/voice" component={VoicePage}></Route>
       </Router>
     </div>
   );
