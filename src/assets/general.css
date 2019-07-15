@@ -1,0 +1,13 @@
+body {
+    font-family: Lato, 'sans-serif';
+    color: #393e46;
+    background-color: #eeeeee;
+}
+
+.App {
+    height: 100vh;
+}
+
+.content {
+    font-size: 1.2rem;
+}
