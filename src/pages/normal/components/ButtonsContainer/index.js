@@ -6,31 +6,31 @@ export default (props) => {
   return (
     <div className="buttons-container">
       <div className="row">
-        <CalcButton label="7" />
-        <CalcButton label="4" />
-        <CalcButton label="1" />
-        <CalcButton label="0" />
+        <CalcButton onClick={props.onInput} label="7" />
+        <CalcButton onClick={props.onInput} label="4" />
+        <CalcButton onClick={props.onInput} label="1" />
+        <CalcButton onClick={props.onInput} label="0" />
       </div>
 
       <div className="row">
-        <CalcButton label="8" />
-        <CalcButton label="5" />
-        <CalcButton label="2" />
-        <CalcButton label="," />
+        <CalcButton onClick={props.onInput} label="8" />
+        <CalcButton onClick={props.onInput} label="5" />
+        <CalcButton onClick={props.onInput} label="2" />
+        <CalcButton onClick={props.onInput} label="," />
       </div>
 
       <div className="row">
-        <CalcButton label="9" />
-        <CalcButton label="6" />
-        <CalcButton label="3" />
-        <CalcButton label="=" />
+        <CalcButton onClick={props.onInput} label="9" />
+        <CalcButton onClick={props.onInput} label="6" />
+        <CalcButton onClick={props.onInput} label="3" />
+        <CalcButton onClick={props.onEvaluate} label="=" />
       </div>
 
       <div className="row">
-        <CalcButton label="/" />
-        <CalcButton label="x" />
-        <CalcButton label="-" />
-        <CalcButton label="+" />
+        <CalcButton onClick={props.onInput} label="/" />
+        <CalcButton onClick={props.onInput} label="x" />
+        <CalcButton onClick={props.onInput} label="-" />
+        <CalcButton onClick={props.onInput} label="+" />
       </div>
     </div>
   )
