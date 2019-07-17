@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
+import Visor from '../../components/Visor';
+import ButtonsContainer from './components/ButtonsContainer';
+import './styles.css';
 
-export default () => {
-  return (
-    <div className="main-page">
-      <div className="content">
-        <p> Normal Page </p>
+export default class NormalPage extends Component {
+  render () {
+    return (
+      <div className="normal-page">
+        <Visor value={'0'} />
+      
+        <ButtonsContainer />
       </div>
-    </div>
-  )
+    )
+  }
 }
