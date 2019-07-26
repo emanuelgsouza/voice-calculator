@@ -42,7 +42,7 @@ export default (props) => {
 
       <div className="row">
         <CalcButton onClick={props.onInput} label="/" />
-        <CalcButton onClick={props.onInput} label="x" />
+        <CalcButton onClick={props.onInput} label="*" />
         <CalcButton onClick={props.onInput} label="-" />
         <CalcButton onClick={props.onInput} label="+" />
       </div>

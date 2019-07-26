@@ -3,14 +3,24 @@ import Visor from '../../components/Visor';
 import ButtonsContainer from './components/ButtonsContainer';
 import { PageContainer } from '../../styles'
 import processButton from '../../utils/process-button'
+import { evaluate } from 'mathjs'
 
 export default class NormalPage extends Component {
   state = {
-    value: ''
+    value: '',
+    resetState: false
   }
 
   onInput = (buttonValue) => {
-    const { value } = this.state
+    const { value, resetState } = this.state
+
+    if (resetState) {
+      this.setState({
+        value: processButton('', buttonValue),
+        resetState: false
+      })
+      return
+    }
 
     this.setState({
       value: processButton(value, buttonValue)
@@ -18,7 +28,11 @@ export default class NormalPage extends Component {
   }
 
   onEvaluate = () => {
-    alert('Not implemented yet')
+    const value = evaluate(this.state.value)
+    this.setState({
+      value,
+      resetState: true
+    })
   }
 
   render () {

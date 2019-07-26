@@ -1,8 +1,8 @@
 import { isEmpty, includes, last, initial } from 'lodash-es'
 
-const actions = ['/', 'x', '-', '+']
+const actions = ['/', '*', '-', '+']
 
-const separator = ' '
+const separator = ''
 
 const isAction = val => includes(actions, val)
 
