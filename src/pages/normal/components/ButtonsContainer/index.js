@@ -1,10 +1,24 @@
 import React from 'react';
 import CalcButton from './Button';
-import './styles.css';
+import styled from 'styled-components';
+
+const Container = styled.div`
+  width: 100%;
+  height: calc(100% - 100px);
+  display: flex;
+
+  .row {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+`;
 
 export default (props) => {
   return (
-    <div className="buttons-container">
+    <Container>
       <div className="row">
         <CalcButton onClick={props.onInput} label="7" />
         <CalcButton onClick={props.onInput} label="4" />
@@ -32,6 +46,6 @@ export default (props) => {
         <CalcButton onClick={props.onInput} label="-" />
         <CalcButton onClick={props.onInput} label="+" />
       </div>
-    </div>
+    </Container>
   )
 }

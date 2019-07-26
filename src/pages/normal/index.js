@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Visor from '../../components/Visor';
 import ButtonsContainer from './components/ButtonsContainer';
-import './styles.css';
-import processButton from './utils/process-button'
+import { PageContainer } from '../../styles'
+import processButton from '../../utils/process-button'
 
 export default class NormalPage extends Component {
   state = {
@@ -23,11 +23,11 @@ export default class NormalPage extends Component {
 
   render () {
     return (
-      <div className="normal-page">
+      <PageContainer>
         <Visor value={this.state.value} />
       
         <ButtonsContainer onInput={this.onInput} onEvaluate={this.onEvaluate} />
-      </div>
+      </PageContainer>
     )
   }
 }
