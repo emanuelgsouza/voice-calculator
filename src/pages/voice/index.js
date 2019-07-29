@@ -98,7 +98,7 @@ export default class VoicePage extends React.Component {
   render () {
     const { value, hasError, errorMessage } = this.state
     const disabled = value.length === 0
-    const message = hasError ? <Message color="red" message={errorMessage} /> : null
+    const message = hasError ? <Message color="#E32932" message={errorMessage} /> : null
 
     return (
       <PageContainer>
@@ -118,7 +118,7 @@ export default class VoicePage extends React.Component {
 
             <RoundButton
               disabled={disabled}
-              color="green"
+              color="#51F530"
               icon="fas fa-check"
               onClick={this.handleClick}
             />

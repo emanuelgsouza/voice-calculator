@@ -62,7 +62,7 @@ export default class VoiceButton extends React.Component {
   render () {
     const { recording } = this.state
 
-    const color = recording ? 'red' : '#222831'
+    const color = recording ? '#E32932' : '#222831'
     const icon = recording ? 'fas fa-stop' : 'fas fa-microphone'
 
     return (
