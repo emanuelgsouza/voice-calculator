@@ -37,6 +37,7 @@ export default class VoiceButton extends React.Component {
 
     this.state.recognition.start()
       .then(data => {
+        this.stop()
         this.props.onTranscription(data)
 
         this.setState({
@@ -49,6 +50,10 @@ export default class VoiceButton extends React.Component {
   }
 
   stop () {
+    this.setState({
+      recording: false
+    })
+
     this.props.onStop()
 
     this.state.recognition.stop()

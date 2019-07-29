@@ -1,10 +1,12 @@
 import React from 'react';
+import styled from 'styled-components';
+import { evaluate } from 'mathjs';
+
 import Visor from '../../components/Visor';
 import { PageContainer } from '../../styles';
-import styled from 'styled-components';
-import VoiceButton from './components/VoiceButton';
+import Message from '../../components/Message';
 import RoundButton from '../../components/RoundButton';
-import { evaluate } from 'mathjs';
+import VoiceButton from './components/VoiceButton';
 
 const ButtonsContainer = styled.div`
   display: flex;
@@ -34,6 +36,8 @@ export default class VoicePage extends React.Component {
     super(props)
     this.state = {
       value: '',
+      hasError: false,
+      errorMessage: '',
       recording: false
     }
 
@@ -45,7 +49,10 @@ export default class VoicePage extends React.Component {
 
   onStart () {
     this.setState({
-      recording: true
+      recording: true,
+      value: '',
+      hasError: false,
+      errorMessage: ''
     })
   }
 
@@ -63,17 +70,32 @@ export default class VoicePage extends React.Component {
 
   handleClick (event) {
     event.preventDefault()
+    try {
+      const value = evaluate(this.state.value)
 
-    this.setState({
-      value: evaluate(this.state.value)
-    })
+      this.setState({
+        value
+      })
+    } catch (err) {
+      console.error(err)
+
+      this.setState({
+        hasError: true,
+        errorMessage: 'An error ocurred when evaluate the expression'
+      })
+    }
   }
 
   render () {
-    const disabled = this.state.value.length === 0
+    const { value, hasError, errorMessage } = this.state
+    const disabled = value.length === 0
+    const message = hasError ? <Message color="red" message={errorMessage} /> : null
+
     return (
       <PageContainer>
         <Visor value={this.state.value} />
+
+        {message}
 
         <Footer>
           <p> Recording a simple expression, like 44 + 5 and confirm </p>
