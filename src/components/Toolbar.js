@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import GithubCorner from './GithubCorner';
 
 const Toolbar = styled.header`
   height: 60px;
@@ -21,6 +22,12 @@ export default () => {
   return (
     <Toolbar>
       <Link to="/"> Calculator </Link>
+
+      <GithubCorner
+        url="https://github.com/emanuelgsouza/voice-calculator"
+        color="white"
+        fill="black"
+      />
     </Toolbar>
   )
 }
