@@ -86,6 +86,15 @@ export default class VoicePage extends React.Component {
     }
   }
 
+  componentDidMount () {
+    if (!window.SpeechRecognition && !window.webkitSpeechRecognition) {
+      this.setState({
+        hasError: true,
+        errorMessage: 'Has not support to SpeechRecognition or webkitSpeechRecognition in this browser'
+      })
+    }
+  }
+
   render () {
     const { value, hasError, errorMessage } = this.state
     const disabled = value.length === 0
