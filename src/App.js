@@ -2,7 +2,7 @@ import React from 'react';
 import Toolbar from './components/Toolbar';
 import './assets/reset.css';
 import './assets/general.css';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
 import MainPage from './pages/main';
 import NormalPage from './pages/normal';
 import VoicePage from './pages/voice';
