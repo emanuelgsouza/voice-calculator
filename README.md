@@ -11,7 +11,7 @@ The Voice Calculator is an app to use voice or text to capture expressions and c
 
 ## Requirements
 
-* node >= 8.0.0
+* node >= 12.0.0
 * npm >= 6.0.0
 
 ## Install
@@ -22,10 +22,10 @@ yarn or npm install
 
 ## Usage
 
-Serve the application in http://localhost:8080
+Serve the application in http://localhost:3000
 
 ```sh
-yarn serve or npm run serve
+yarn start or npm run start
 ```
 
 ## Build
